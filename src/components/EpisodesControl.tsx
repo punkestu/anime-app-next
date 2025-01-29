@@ -8,11 +8,13 @@ export function EpisodesControl({
   animeTitle,
   prev,
   next,
+  all,
   episodes,
 }: {
   animeTitle: string;
   prev: string | undefined;
   next: string | undefined;
+  all: string;
   episodes: Episode[];
 }) {
   const modalRef = useRef<HTMLDivElement | null>(null);
@@ -28,7 +30,7 @@ export function EpisodesControl({
           placement: "bottom-right",
           backdrop: "dynamic",
           backdropClasses:
-            "bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40",
+            "bg-gray-900/50 fixed inset-0 z-40",
           closable: true,
         })
       );
@@ -108,6 +110,7 @@ export function EpisodesControl({
         onClose={closeModal}
         ref={modalRef}
         animeTitle={animeTitle}
+        all={all}
       />
     </>
   );
@@ -117,10 +120,12 @@ export function EpisodesModal({
   episodes,
   animeTitle,
   onClose,
+  all,
   ref,
 }: {
   episodes: Episode[];
   animeTitle: string;
+  all: string;
   onClose: () => void;
   ref: React.RefObject<HTMLDivElement | null>;
 }) {
@@ -165,6 +170,15 @@ export function EpisodesModal({
           </div>
           <div className="p-4 md:p-5 space-y-4 h-[50vh] overflow-y-auto">
             <ul className="flex gap-4 my-4 flex-wrap">
+              <li className="flex-grow flex">
+                <Link
+                  onClick={onClose}
+                  className="w-full text-center py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+                  href={"/anime/" + all}
+                >
+                  Semua Episode
+                </Link>
+              </li>
               {reversedEpisode.map((episode, i) => (
                 <li key={i} className="flex-grow flex">
                   <Link

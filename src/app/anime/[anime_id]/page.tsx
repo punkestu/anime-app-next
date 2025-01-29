@@ -25,7 +25,7 @@ export default async function Page({
       <section className="px-4 py-2">
         <h1 className="text-4xl font-medium mb-2">{anime.title}</h1>
         <p className="text-justify">{anime.description}</p>
-        <ul className="flex items-center gap-2 mt-2">
+        <ul className="flex items-center gap-2 mt-2 flex-wrap">
           <li className="p-2 bg-yellow-300 flex items-center me-2">
             <svg
               className="w-5 h-5 me-1 text-gray-800"
@@ -46,7 +46,7 @@ export default async function Page({
             <li key={i}>
               <a
                 className="font-medium text-blue-600 hover:underline"
-                href={`/genre/${genre.url}`}
+                href={`/anime?genre=${genre.url}`}
               >
                 {genre.title}
               </a>

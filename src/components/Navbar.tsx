@@ -16,7 +16,6 @@ export default function Navbar() {
   const pages = [
     { name: "Home", path: "/" },
     { name: "Anime List", path: "/anime" },
-    { name: "Genre", path: "/genre" },
     { name: "Jadwal Rilis", path: "/jadwal" },
   ];
   return (
