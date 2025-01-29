@@ -3,13 +3,7 @@ import Link from "next/link";
 import ErrorImage from "../../public/error.jpg";
 import Image from "next/image";
 
-export default function GlobalError({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) {
+export default function GlobalError({ error }: { error: Error }) {
   return (
     <main className="flex flex-col items-center justify-center h-[90vh]">
       <Image src={ErrorImage} alt="Turbo Granny" />

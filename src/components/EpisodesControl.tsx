@@ -1,6 +1,6 @@
 "use client";
 import { Episode } from "@/port/episode";
-import { initModals, Modal, ModalOptions } from "flowbite";
+import { initModals, Modal } from "flowbite";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -17,19 +17,21 @@ export function EpisodesControl({
 }) {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const [modal, setModal] = useState<Modal | null>(null);
-  const options: ModalOptions = {
-    placement: "bottom-right",
-    backdrop: "dynamic",
-    backdropClasses: "bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40",
-    closable: true,
-  };
 
   useEffect(() => {
     initModals();
   }, []);
   useEffect(() => {
     if (modalRef.current) {
-      setModal(new Modal(modalRef.current, options));
+      setModal(
+        new Modal(modalRef.current, {
+          placement: "bottom-right",
+          backdrop: "dynamic",
+          backdropClasses:
+            "bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40",
+          closable: true,
+        })
+      );
     }
   }, [modalRef]);
 

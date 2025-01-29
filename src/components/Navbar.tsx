@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 import Icon from "../../public/icon.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   useEffect(() => {
@@ -21,12 +22,12 @@ export default function Navbar() {
   return (
     <nav className="bg-white border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image src={Icon} alt="Icon" width={40} height={40} />
           <span className="self-center text-2xl font-semibold whitespace-nowrap">
             GrannyNime
           </span>
-        </a>
+        </Link>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
