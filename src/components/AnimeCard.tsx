@@ -6,7 +6,7 @@ export default function AnimeCard({
   anime: { url: string; image: string; title: string; description?: string };
 }) {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
       <a href={anime.url}>
         <div className="h-52 w-full overflow-hidden">
           <Image
@@ -20,11 +20,11 @@ export default function AnimeCard({
       </a>
       <div className="p-5">
         <a href={anime.url}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
             {anime.title}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-3 font-normal text-gray-700">
           {anime.description}
         </p>
       </div>

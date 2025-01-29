@@ -28,7 +28,7 @@ export default async function Page({
         <ul className="flex items-center gap-2 mt-2">
           <li className="p-2 bg-yellow-300 flex items-center me-2">
             <svg
-              className="w-5 h-5 me-1 text-gray-800 dark:text-white"
+              className="w-5 h-5 me-1 text-gray-800"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -45,7 +45,7 @@ export default async function Page({
           {anime.genre.map((genre, i) => (
             <li key={i}>
               <a
-                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                className="font-medium text-blue-600 hover:underline"
                 href={`/genre/${genre.url}`}
               >
                 {genre.title}
@@ -59,7 +59,7 @@ export default async function Page({
           {episodes.reverse().map((episode, i) => (
             <li key={i} className="flex-grow flex">
               <Link
-                className="w-full text-center py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                className="w-full text-center py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
                 href={`/episode/${episode.url}`}
               >
                 {episode.title}

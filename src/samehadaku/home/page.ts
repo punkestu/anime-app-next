@@ -9,9 +9,10 @@ export class Home implements HomePage {
 
     async getHomePage(): Promise<HomeResponse> {
         const html = await fetch("https://samehadaku.mba/").then((res) => res.text());
+        const batchFlag = process.env.BATCH_FLAG;
         return {
             animeTerbaru: this.homeRepo.getAnimeTerbaru(html),
-            animeBatch: this.homeRepo.getAnimeBatch(html),
+            animeBatch: batchFlag == "1" ? this.homeRepo.getAnimeBatch(html) : [],
         };
     }
 }

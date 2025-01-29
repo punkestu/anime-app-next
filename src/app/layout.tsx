@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import 'flowbite';
+import "flowbite";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anime App",
-  description: "Generate anime app using Next.js + Samehadaku",
+  title: "GrannyNime",
+  description: "Tempat streaming anime gratis subtitle Indonesia tanpa iklan.",
+  icons: {
+    icon: "/icon.png",
+  }
 };
 
 export default function RootLayout({
@@ -24,14 +28,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar page=""/>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
