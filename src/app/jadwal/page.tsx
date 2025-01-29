@@ -1,3 +1,5 @@
+import GlobalError from "../error";
+
 export default function JadwalPage() {
-  throw new Error("Not implemented");
+  return <GlobalError error={new Error("Not Implemented")} />;
 }
