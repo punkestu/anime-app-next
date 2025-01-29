@@ -3,6 +3,7 @@ export interface EpisodePage {
 }
 
 export interface EpisodeRepo {
+    getAnimeTitle: (html: string) => string;
     getEpisodeTitle: (html: string) => string;
     getMirrors: (html: string) => Mirror[];
     getControlEps: (html: string) => EpsControl;
@@ -17,6 +18,7 @@ export interface Mirror {
 }
 
 export interface EpisodeResponse {
+    animeTitle: string;
     title: string;
     mirrors: Mirror[];
     episodes: Episode[];
@@ -24,9 +26,9 @@ export interface EpisodeResponse {
 }
 
 export interface EpsControl {
-    prev: string;
+    prev: string | undefined;
     all: string;
-    next: string;
+    next: string | undefined;
 }
 
 export interface Episode {

@@ -2,8 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["samehadaku.mba"],
-  }
+    remotePatterns: [
+      {
+        hostname: "samehadaku.mba",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

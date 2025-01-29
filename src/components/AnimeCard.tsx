@@ -6,13 +6,15 @@ export default function AnimeCard({
   anime: { url: string; image: string; title: string; description?: string };
 }) {
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
       <a href={anime.url}>
         <div className="h-52 w-full overflow-hidden">
           <Image
             className="rounded-t-lg w-[100%] h-[100%] hover:w-[150%] hover:h-[150%] duration-300 object-cover"
             src={anime.image}
             alt={anime.title}
+            width={600}
+            height={400}
           />
         </div>
       </a>

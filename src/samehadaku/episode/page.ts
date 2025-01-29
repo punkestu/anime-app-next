@@ -11,6 +11,7 @@ export default class Page implements EpisodePage {
       (res) => res.text()
     );
     return {
+      animeTitle: this.repo.getAnimeTitle(html),
       title: this.repo.getEpisodeTitle(html),
       mirrors: this.repo.getMirrors(html),
       control: this.repo.getControlEps(html),

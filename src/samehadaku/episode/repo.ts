@@ -5,6 +5,11 @@ export default class Repo implements EpisodeRepo {
   private prefixEpisode = "https://samehadaku.mba/";
   private prefixAnime = "https://samehadaku.mba/anime/";
 
+  getAnimeTitle(html: string): string {
+    const $ = cheerio.load(html);
+    return $("[property='og:title']").attr("content") || "";
+  }
+
   getEpisodeTitle(html: string): string {
     const $ = cheerio.load(html);
     return $("[property='og:title']").attr("content") || "";
@@ -28,18 +33,16 @@ export default class Repo implements EpisodeRepo {
   getControlEps(html: string): EpsControl {
     const $ = cheerio.load(html);
     return {
-      prev:
-        $(".naveps div:nth-child(1) a")
-          .attr("href")
-          ?.replace(this.prefixEpisode, "") || "",
+      prev: $(".naveps div:nth-child(1) a")
+        .attr("href")
+        ?.replace(this.prefixEpisode, ""),
       all:
         $(".naveps div:nth-child(2) a")
           .attr("href")
           ?.replace(this.prefixAnime, "") || "",
-      next:
-        $(".naveps div:nth-child(3) a")
-          .attr("href")
-          ?.replace(this.prefixEpisode, "") || "",
+      next: $(".naveps div:nth-child(3) a")
+        .attr("href")
+        ?.replace(this.prefixEpisode, ""),
     };
   }
 

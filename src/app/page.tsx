@@ -17,17 +17,19 @@ export default async function Home() {
   return (
     <>
       <main>
-        <section>
-          <h1 >Anime Terbaru</h1>
-          <div className="grid grid-cols-4 gap-2">
+        <section className="px-4 py-2">
+          <h1 className="text-lg font-semibold">Anime Terbaru</h1>
+          <hr className="my-2" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-2">
             {home.animeTerbaru.map((anime, i) => (
               <AnimeCard key={i} anime={anime} />
             ))}
           </div>
         </section>
-        <section>
-          <h1>Anime Batch</h1>
-          <div>
+        <section className="px-4 py-2">
+          <h1 className="text-lg font-semibold">Anime Batch</h1>
+          <hr className="my-2" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-2">
             {home.animeBatch.map((anime, i) => (
               <AnimeCard key={i} anime={anime} />
             ))}
