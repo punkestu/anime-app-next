@@ -16,7 +16,7 @@ export default function Navbar() {
   const pages = [
     { name: "Home", path: "/" },
     { name: "Anime List", path: "/anime" },
-    { name: "Jadwal Rilis", path: "/jadwal" },
+    { name: "Schedule", path: "/schedule" },
   ];
   return (
     <nav className="bg-white border-gray-200">
