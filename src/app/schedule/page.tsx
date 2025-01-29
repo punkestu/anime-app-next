@@ -42,7 +42,11 @@ export default async function JadwalPage({
       <hr className="my-2" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-2">
         {schedule.schedule.map((anime, i) => (
-          <AnimeCard id={i} key={i} anime={{ ...anime, description: anime.time }} />
+          <AnimeCard
+            id={i}
+            key={i}
+            anime={{ ...anime, description: anime.time }}
+          />
         ))}
       </div>
     </main>

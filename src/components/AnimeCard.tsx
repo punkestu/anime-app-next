@@ -1,6 +1,8 @@
 "use client";
+import { initTooltips } from "flowbite";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function AnimeCard({
   anime,
@@ -9,6 +11,9 @@ export default function AnimeCard({
   anime: { url: string; image: string; title: string; description?: string };
   id: number;
 }) {
+  useEffect(() => {
+    if (id === 0) initTooltips();
+  }, []);
   return (
     <>
       <div
