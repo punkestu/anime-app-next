@@ -5,7 +5,7 @@ import Image from "next/image";
 export default async function Page({
   params,
 }: {
-  params: { anime_id: string };
+  params: Promise<{ anime_id: string }>;
 }) {
   const repo = new AnimeRepo();
   const page = new AnimePage(repo);

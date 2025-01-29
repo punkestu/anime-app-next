@@ -5,7 +5,7 @@ import MirrorPlayer from "@/components/MirrorPlayer";
 export default async function Page({
   params,
 }: {
-  params: { episode_id: string };
+  params: Promise<{ episode_id: string }>;
 }) {
   const repo = new EpisodeRepo();
   const page = new EpisodePage(repo);
