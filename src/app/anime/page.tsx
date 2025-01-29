@@ -63,7 +63,7 @@ export default async function AnimePage({
       <hr className="my-2" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-2">
         {animeList.map((anime, i) => (
-          <AnimeCard key={i} anime={anime} />
+          <AnimeCard id={i} key={i} anime={anime} />
         ))}
       </div>
     </main>
@@ -95,15 +95,15 @@ function Pagination({
     <nav aria-label="Page navigation example">
       <ul className="inline-flex -space-x-px text-sm">
         <li>
-          <a
+          <Link
             href={itemUrl(currentPage > 1 ? currentPage - 1 : false)}
             className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700"
           >
             Previous
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href={itemUrl(
               currentPage <= 1
                 ? 1
@@ -124,11 +124,11 @@ function Pagination({
               : currentPage >= maxPage
               ? currentPage - 2
               : currentPage - 1}
-          </a>
+          </Link>
         </li>
         {maxPage >= 2 && (
           <li>
-            <a
+            <Link
               href={itemUrl(
                 currentPage <= 1
                   ? 2
@@ -149,12 +149,12 @@ function Pagination({
                 : currentPage >= maxPage
                 ? maxPage - 1
                 : currentPage}
-            </a>
+            </Link>
           </li>
         )}
         {maxPage >= 3 && (
           <li>
-            <a
+            <Link
               href={itemUrl(
                 currentPage <= 1
                   ? 3
@@ -175,16 +175,16 @@ function Pagination({
                 : currentPage >= maxPage
                 ? currentPage
                 : currentPage + 1}
-            </a>
+            </Link>
           </li>
         )}
         <li>
-          <a
+          <Link
             href={itemUrl(currentPage < maxPage ? currentPage + 1 : false)}
             className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700"
           >
             Next
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

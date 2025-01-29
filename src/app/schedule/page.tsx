@@ -1,5 +1,6 @@
 import AnimeCard from "@/components/AnimeCard";
 import Page from "@/samehadaku/schedule/page";
+import Link from "next/link";
 
 export default async function JadwalPage({
   searchParams,
@@ -27,7 +28,7 @@ export default async function JadwalPage({
       <hr className="my-2" />
       <div className="flex justify-center flex-wrap gap-2">
         {days.map((day) => (
-          <a
+          <Link
             key={day}
             href={`/schedule?day=${day}`}
             className={`block py-2 px-3 ${
@@ -35,13 +36,13 @@ export default async function JadwalPage({
             } rounded-sm hover:bg-gray-100`}
           >
             {day}
-          </a>
+          </Link>
         ))}
       </div>
       <hr className="my-2" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-2">
         {schedule.schedule.map((anime, i) => (
-          <AnimeCard key={i} anime={{ ...anime, description: anime.time }} />
+          <AnimeCard id={i} key={i} anime={{ ...anime, description: anime.time }} />
         ))}
       </div>
     </main>

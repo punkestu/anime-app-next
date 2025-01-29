@@ -44,12 +44,12 @@ export default async function Page({
           </li>
           {anime.genre.map((genre, i) => (
             <li key={i}>
-              <a
+              <Link
                 className="font-medium text-blue-600 hover:underline"
                 href={`/anime?genre=${genre.url}`}
               >
                 {genre.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

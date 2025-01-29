@@ -51,7 +51,7 @@ export function EpisodesControl({
   return (
     <>
       <nav className="flex gap-2 items-center justify-center my-2">
-        <a
+        <Link
           href={`/episode/${prev}`}
           className="p-2"
           onClick={preventLink(prev == "#")}
@@ -73,7 +73,7 @@ export function EpisodesControl({
               d="m15 19-7-7 7-7"
             />
           </svg>
-        </a>
+        </Link>
         <button
           className="p-2"
           data-modal-target="episodes-modal"
@@ -81,7 +81,7 @@ export function EpisodesControl({
         >
           All Episodes
         </button>
-        <a
+        <Link
           href={`/episode/${next}`}
           className="p-2"
           onClick={preventLink(next == "#")}
@@ -103,7 +103,7 @@ export function EpisodesControl({
               d="m9 5 7 7-7 7"
             />
           </svg>
-        </a>
+        </Link>
       </nav>
       <EpisodesModal
         episodes={episodes}
