@@ -25,7 +25,7 @@ export default function MirrorPlayer({
       .then((data) => {
         setVideoFrame(data.video);
       });
-  }, [currentMirror]);
+  }, [currentMirror, mirrors]);
 
   return (
     <>

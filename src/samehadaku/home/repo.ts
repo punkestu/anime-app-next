@@ -21,6 +21,7 @@ export class Home implements HomeRepo {
   }
 
   getAnimeBatch(html: string): Anime[] {
+    console.log(html);
     return [];
   }
 }

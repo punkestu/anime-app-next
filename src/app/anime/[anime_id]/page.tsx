@@ -1,5 +1,6 @@
 import AnimeRepo from "@/samehadaku/anime/repo";
 import AnimePage from "@/samehadaku/anime/page";
+import Image from "next/image";
 
 export default async function Page({
   params,
@@ -14,7 +15,7 @@ export default async function Page({
   return (
     <main>
       <h1>{anime.title}</h1>
-      <img src={anime.image} alt={anime.title} />
+      <Image src={anime.image} alt={anime.title} />
       <p>{anime.description}</p>
       <p>{anime.rate}/10</p>
       <ul className="flex gap-2">
