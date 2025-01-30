@@ -1,8 +1,5 @@
-"use client";
-import { initTooltips } from "flowbite";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 
 export default function AnimeCard({
   anime,
@@ -11,19 +8,16 @@ export default function AnimeCard({
   anime: { url: string; image: string; title: string; description?: string };
   id: number;
 }) {
-  useEffect(() => {
-    if (id === 0) initTooltips();
-  }, []);
   return (
-    <>
+    <Tooltip text={anime.title}>
       <div
+        id={`anime-${id}`}
         className="bg-white border border-gray-200 rounded-lg shadow-sm"
-        data-tooltip-target={`tooltip-card-${id}`}
       >
         <Link href={anime.url}>
           <div className="h-52 w-full overflow-hidden">
             <Image
-              className="rounded-t-lg w-[100%] h-[100%] hover:w-[150%] hover:h-[150%] duration-300 object-cover"
+              className="rounded-t-lg w-[100%] h-[100%] group-hover:w-[150%] group-hover:h-[150%] duration-300 object-cover"
               src={anime.image}
               alt={anime.title}
               width={600}
@@ -42,14 +36,23 @@ export default function AnimeCard({
           <p className="mb-3 font-normal text-gray-700">{anime.description}</p>
         </div>
       </div>
-      <div
-        id={`tooltip-card-${id}`}
-        role="tooltip"
-        className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip"
-      >
-        {anime.title}
-        <div className="tooltip-arrow" data-popper-arrow></div>
+    </Tooltip>
+  );
+}
+
+function Tooltip({
+  children,
+  text,
+}: {
+  children?: React.ReactNode;
+  text: string;
+}) {
+  return (
+    <div className="relative group">
+      {children}
+      <div className="absolute -z-50 group-hover:z-50 p-2 text-xs text-white bg-black rounded-lg bottom-1 group-hover:bottom-full duration-300 left-1/2 transform -translate-x-1/2 -translate-y-2 text-center">
+        {text}
       </div>
-    </>
+    </div>
   );
 }
