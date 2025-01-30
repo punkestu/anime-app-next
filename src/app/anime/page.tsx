@@ -80,10 +80,10 @@ function Pagination({
   search: { query?: string; genre?: string };
 }) {
   const itemClass = (page: number) => {
-    return `flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 ${
-      page === currentPage
+    return `flex items-center justify-center px-3 h-8 leading-tight border border-gray-300 ${
+      page == currentPage
         ? "text-blue-600 bg-blue-50 border-blue-300"
-        : "hover:bg-gray-100 hover:text-gray-700"
+        : "text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700"
     }`;
   };
   const { query, genre } = search;

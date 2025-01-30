@@ -45,7 +45,7 @@ export default async function JadwalPage({
           <AnimeCard
             id={i}
             key={i}
-            anime={{ ...anime, description: anime.time }}
+            anime={{ ...anime, description: anime.time.length > 0 ? anime.time : "-" }}
           />
         ))}
       </div>
