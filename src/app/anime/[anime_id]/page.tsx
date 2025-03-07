@@ -59,7 +59,7 @@ export default async function Page({
           {episodes.reverse().map((episode, i) => (
             <li key={i} className="flex-grow flex">
               <Link
-                className="w-full text-center py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+                className="w-full text-center py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 visited:bg-slate-200"
                 href={`/episode/${episode.url}`}
               >
                 {episode.title}
