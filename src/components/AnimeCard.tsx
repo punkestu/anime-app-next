@@ -18,7 +18,7 @@ export default function AnimeCard({
           <div className="h-52 w-full overflow-hidden">
             <Image
               className="rounded-t-lg w-[100%] h-[100%] group-hover:w-[150%] group-hover:h-[150%] duration-300 object-cover"
-              src={anime.image}
+              src={anime.image ?? "/error.jpg"}
               alt={anime.title}
               width={600}
               height={400}
