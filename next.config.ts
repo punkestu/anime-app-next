@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "samehadaku.mba",
+        protocol: "https",
+        hostname: "**",
       },
     ],
   },
