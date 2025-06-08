@@ -7,7 +7,7 @@ export default class Page implements EpisodePage {
   }
 
   async getEpisodePage(episodeId: string): Promise<EpisodeResponse> {
-    const html = await fetch(`https://samehadaku.mba/${episodeId}`).then(
+    const html = await fetch(process.env.SAMEHADAKU_WEB + `/${episodeId}`).then(
       (res) => res.text()
     );
     return {

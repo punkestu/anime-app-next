@@ -3,7 +3,7 @@ import { SchedulePage, ScheduleResponse } from "@/port/schedule";
 export default class Page implements SchedulePage {
   async getSchedule(day: string): Promise<ScheduleResponse> {
     const data = await fetch(
-      `https://samehadaku.mba/wp-json/custom/v1/all-schedule?perpage=20&day=${day}&type=schtml`
+      process.env.SAMEHADAKU_WEB + `/wp-json/custom/v1/all-schedule?perpage=20&day=${day}&type=schtml`
     ).then((res) => res.json());
     return {
       day,

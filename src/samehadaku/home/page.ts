@@ -8,7 +8,7 @@ export class Home implements HomePage {
     }
 
     async getHomePage(): Promise<HomeResponse> {
-        const html = await fetch("https://samehadaku.mba/").then((res) => res.text());
+        const html = await fetch(process.env.SAMEHADAKU_WEB + "/").then((res) => res.text());
         const batchFlag = process.env.BATCH_FLAG;
         return {
             animeTerbaru: this.homeRepo.getAnimeTerbaru(html),

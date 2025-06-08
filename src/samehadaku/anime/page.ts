@@ -6,7 +6,7 @@ export default class Page implements AnimePage {
     this.repo = repo;
   }
   async getAnimePage(anime_id: string): Promise<AnimeResponse> {
-    const html = await fetch("https://samehadaku.mba/anime/" + anime_id).then(
+    const html = await fetch(process.env.SAMEHADAKU_WEB + "/anime/" + anime_id).then(
       (res) => res.text()
     );
     return {

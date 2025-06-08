@@ -2,7 +2,7 @@ import { Anime, ListRepo } from "@/port/list";
 import * as cheerio from "cheerio";
 
 export default class Repo implements ListRepo {
-  private prefixAnime = "https://samehadaku.mba/anime/";
+  private prefixAnime = process.env.SAMEHADAKU_WEB + "/anime/";
   getAnimeList(html: string): Anime[] {
     const $ = cheerio.load(html);
     const animeList: Anime[] = $(".animepost")

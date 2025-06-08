@@ -2,8 +2,8 @@ import { HomeRepo, Anime } from "@/port/home";
 import * as cheerio from "cheerio";
 
 export class Home implements HomeRepo {
-  private prefixAnime = "https://samehadaku.mba/anime/";
-  private prefixBatch = "https://samehadaku.mba/batch/";
+  private prefixAnime = process.env.SAMEHADAKU_WEB + "/anime/";
+  private prefixBatch = process.env.SAMEHADAKU_WEB + "/batch/";
 
   getAnimeTerbaru(html: string): Anime[] {
     const $ = cheerio.load(html);

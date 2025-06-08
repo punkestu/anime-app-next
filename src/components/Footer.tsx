@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-white text-center py-4 flex flex-col justify-center items-center border-t">
       <p>Thank you</p>
-      <Link href="https://samehadaku.mba">
+      <Link href={process.env.SAMEHADAKU_WEB ?? ""}>
         <Image src={Samehadaku} alt="Samehadaku" width={200} height={50} />
       </Link>
     </footer>

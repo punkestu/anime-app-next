@@ -2,8 +2,8 @@ import { Episode, EpisodeRepo, EpsControl, Mirror } from "@/port/episode";
 import * as cheerio from "cheerio";
 
 export default class Repo implements EpisodeRepo {
-  private prefixEpisode = "https://samehadaku.mba/";
-  private prefixAnime = "https://samehadaku.mba/anime/";
+  private prefixEpisode = process.env.SAMEHADAKU_WEB + "/";
+  private prefixAnime = process.env.SAMEHADAKU_WEB + "/anime/";
 
   getAnimeTitle(html: string): string {
     const $ = cheerio.load(html);

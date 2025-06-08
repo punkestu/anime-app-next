@@ -7,7 +7,7 @@ export async function GET(req: Request) {
   const nume = params.get("nume");
   const type = params.get("type");
 
-  const frame = await fetch("https://samehadaku.mba/wp-admin/admin-ajax.php", {
+  const frame = await fetch(process.env.SAMEHADAKU_WEB + "/wp-admin/admin-ajax.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

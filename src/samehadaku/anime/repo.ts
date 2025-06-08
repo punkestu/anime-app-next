@@ -2,8 +2,8 @@ import { Anime, AnimeRepo, Episode, Genre } from "@/port/anime";
 import * as cheerio from "cheerio";
 
 export default class Repo implements AnimeRepo {
-  private prefixGenre = "https://samehadaku.mba/genre/";
-  private prefixEpisode = "https://samehadaku.mba/";
+  private prefixGenre = process.env.SAMEHADAKU_WEB + "/genre/";
+  private prefixEpisode = process.env.SAMEHADAKU_WEB + "/";
 
   getDetail(html: string): Anime {
     const $ = cheerio.load(html);
