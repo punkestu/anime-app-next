@@ -24,7 +24,7 @@ export default async function JadwalPage({
   const schedule = await page.getSchedule(currentDay);
   return (
     <main className="px-4 py-2">
-      <h1 className="text-lg font-semibold">Schedule</h1>
+      <h1 className="text-lg font-semibold dark:text-white">Schedule</h1>
       <hr className="my-2" />
       <div className="flex justify-center flex-wrap gap-2">
         {days.map((day) => (
@@ -32,8 +32,8 @@ export default async function JadwalPage({
             key={day}
             href={`/schedule?day=${day}`}
             className={`block py-2 px-3 ${
-              currentDay == day ? "text-blue-500 underline" : "text-gray-900"
-            } rounded-sm hover:bg-gray-100`}
+              currentDay == day ? "text-blue-500 dark:text-white underline" : "text-gray-900 dark:text-slate-300"
+            } rounded-sm hover:bg-gray-100 dark:hover:bg-gray-500`}
           >
             {day}
           </Link>

@@ -24,7 +24,7 @@ export default async function AnimePage({
     <main className="px-4 py-2">
       <SearchBar currentPage={currentPage} currentSearch={{ query, genre }} />
       <div className="flex justify-between flex-wrap">
-        <h1 className="text-lg font-semibold">
+        <h1 className="text-lg font-semibold dark:text-white">
           {query ? `Hasil pencarian: "${query}"` : "Daftar Anime"}
         </h1>
         <Pagination

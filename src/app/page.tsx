@@ -12,8 +12,8 @@ export default async function Home() {
   return (
     <>
       <main>
-        <section className="px-4 py-2">
-          <h1 className="text-lg font-semibold">On Going</h1>
+        <section className="px-4 py-2 bg-black">
+          <h1 className="text-lg font-semibold dark:text-white">On Going</h1>
           <hr className="my-2" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-2">
             {home.animeTerbaru.map((anime, i) => (
@@ -23,7 +23,7 @@ export default async function Home() {
         </section>
         {batchFlag == "1" && (
           <section className="px-4 py-2">
-            <h1 className="text-lg font-semibold">Anime Batch</h1>
+            <h1 className="text-lg font-semibold dark:text-white">Anime Batch</h1>
             <hr className="my-2" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-2">
               {home.animeBatch.map((anime, i) => (
