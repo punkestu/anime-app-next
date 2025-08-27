@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <main className="flex flex-col items-center justify-center h-[90vh]">
       <Image src={ErrorImage} alt="Turbo Granny" />
-      <h1 className="my-2 text-4xl font-bold dark:text-white">
+      <h1 className="my-2 text-4xl font-bold dark:text-white text-center">
         404 Not Found!!!
       </h1>
       <Link
