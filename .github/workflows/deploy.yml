@@ -11,6 +11,7 @@ jobs:
     env:
       SAMEHADAKU_WEB: ${{ secrets.SAMEHADAKU_WEB }}
       BATCH_FLAG: 0
+      PUNKESTU_AUTH: ${{ secrets.PUNKESTU_AUTH }}
 
     steps:
       - name: Checkout repo
