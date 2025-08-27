@@ -36,9 +36,7 @@ jobs:
           local-dir: ./
           server-dir: /home/punkestu/repositories/anime-app-next/
           exclude: |
-            .git/
-            .github/
             **/.git*
-            **/.github*
-            node_modules/**
+            **/.git*/**
+            **/node_modules/**
             .next/cache/**
