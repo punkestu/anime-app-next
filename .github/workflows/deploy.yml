@@ -34,9 +34,10 @@ jobs:
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASS }}
           local-dir: ./
-          server-dir: /home/punkestu/repositories/anime-app-next/
+          server-dir: /repositories/anime-app-next/
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
+            .vscode/**
             .next/cache/**
