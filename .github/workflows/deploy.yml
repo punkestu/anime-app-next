@@ -33,7 +33,7 @@ jobs:
           server: ${{ secrets.CPANEL_HOST }}
           username: ${{ secrets.CPANEL_USER }}
           password: ${{ secrets.CPANEL_PASS }}
-          local-dir: .
+          local-dir: ./
           server-dir: /home/punkestu/repositories/anime-app-next/
           exclude: |
             **/.git*
