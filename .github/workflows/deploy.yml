@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SAMEHADAKU_WEB: ${{ secrets.SAMEHADAKU_WEB }}
+      BATCH_FLAG: 0
 
     steps:
       - name: Checkout repo
