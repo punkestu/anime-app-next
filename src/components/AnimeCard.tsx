@@ -12,7 +12,7 @@ export default function AnimeCard({
     <Tooltip text={anime.title}>
       <div
         id={`anime-${id}`}
-        className="bg-white border border-gray-200 rounded-lg shadow-sm"
+        className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-950 rounded-lg shadow-sm"
       >
         <Link href={anime.url}>
           <div className="h-52 w-full overflow-hidden">
@@ -27,13 +27,13 @@ export default function AnimeCard({
         </Link>
         <div className="p-5">
           <Link href={anime.url}>
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {anime.title.length > 15
                 ? anime.title.slice(0, 15) + "..."
                 : anime.title}
             </h5>
           </Link>
-          <p className="mb-3 font-normal text-gray-700">{anime.description}</p>
+          <p className="mb-3 font-normal text-gray-700 dark:text-white">{anime.description}</p>
         </div>
       </div>
     </Tooltip>

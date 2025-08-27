@@ -31,7 +31,7 @@ export default async function JadwalPage({
           <Link
             key={day}
             href={`/schedule?day=${day}`}
-            className={`block py-2 px-3 ${
+            className={`block py-2 px-3 capitalize ${
               currentDay == day ? "text-blue-500 dark:text-white underline" : "text-gray-900 dark:text-slate-300"
             } rounded-sm hover:bg-gray-100 dark:hover:bg-gray-500`}
           >

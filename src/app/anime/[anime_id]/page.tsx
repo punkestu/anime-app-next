@@ -22,7 +22,7 @@ export default async function Page({
         width={1240}
         height={720}
       />
-      <section className="px-4 py-2">
+      <section className="px-4 py-2 dark:text-white">
         <h1 className="text-4xl font-medium mb-2">{anime.title}</h1>
         <p className="text-justify">{anime.description}</p>
         <ul className="flex items-center gap-2 mt-2 flex-wrap">

@@ -50,7 +50,7 @@ export function EpisodesControl({
   };
   return (
     <>
-      <nav className="flex gap-2 items-center justify-center my-2">
+      <nav className="flex gap-2 items-center justify-center my-2 dark:text-white">
         <Link
           href={`/episode/${prev}`}
           className="p-2"
