@@ -9,8 +9,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
     initFlowbite();
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      setIsDarkMode(true);
+    } else {
+      setIsDarkMode(false);
+    }
   }, []);
   const path = usePathname();
   const pages = [
@@ -19,12 +26,6 @@ export default function Navbar() {
     { name: "Schedule", path: "/schedule" },
   ];
 
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("theme") === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches) ||
-      false
-  );
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
