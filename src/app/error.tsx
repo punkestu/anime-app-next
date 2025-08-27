@@ -14,7 +14,7 @@ export default function GlobalError({
   return (
     <main className="flex flex-col items-center justify-center h-[90vh]">
       <Image src={ErrorImage} alt="Turbo Granny" />
-      <h1 className="my-2 text-4xl font-bold">
+      <h1 className="my-2 text-4xl font-bold dark:text-white">
         {plainError ? plainError : "Server error"}
       </h1>
       <Link

@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <>
       <main>
-        <section className="px-4 py-2 bg-black">
+        <section className="px-4 py-2">
           <h1 className="text-lg font-semibold dark:text-white">On Going</h1>
           <hr className="my-2" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-2">
