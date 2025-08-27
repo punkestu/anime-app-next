@@ -1,0 +1,39 @@
+name: Build and Deploy Next.js to cPanel
+
+on:
+  push:
+    branches:
+      - main # or your deployment branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USER }}
+          password: ${{ secrets.CPANEL_PASS }}
+          local-dir: .
+          server-dir: /home/USERNAME/myapp # adjust path
+          exclude: |
+            **/.git*
+            **/.github*
+            node_modules/**
+            .next/cache/**
