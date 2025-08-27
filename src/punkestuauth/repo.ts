@@ -10,7 +10,7 @@ export default class AuthRepository implements AuthRepo {
     }
   }
 
-  login(username: String, password: String): Promise<LoginResponse | null> {
+  login(username: string, password: string): Promise<LoginResponse | null> {
     return fetch(this.url + "/v1/auth/login", {
       method: "POST",
       headers: {

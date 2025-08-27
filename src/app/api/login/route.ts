@@ -26,11 +26,11 @@ export async function POST(req: Request) {
     tokens: loginResponse.tokens,
   });
   const Cookies = await cookies();
-  Cookies.set("token", String(loginResponse.tokens.token), {
+  Cookies.set("token", loginResponse.tokens.token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
   });
-  Cookies.set("refreshToken", String(loginResponse.tokens.refreshToken), {
+  Cookies.set("refreshToken", loginResponse.tokens.refreshToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
   });
