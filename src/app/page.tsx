@@ -1,5 +1,5 @@
-import * as repo from "@/samehadaku/home/repo";
-import * as page from "@/samehadaku/home/page";
+import * as repo from "@/otakudesu/home/repo";
+import * as page from "@/otakudesu/home/page";
 import AnimeCard from "@/components/AnimeCard";
 
 export default async function Home() {

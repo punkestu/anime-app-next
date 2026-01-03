@@ -1,5 +1,5 @@
-import EpisodeRepo from "@/samehadaku/episode/repo";
-import EpisodePage from "@/samehadaku/episode/page";
+import EpisodeRepo from "@/otakudesu/episode/repo";
+import EpisodePage from "@/otakudesu/episode/page";
 import MirrorPlayer from "@/components/MirrorPlayer";
 import { EpisodesControl } from "@/components/EpisodesControl";
 
@@ -14,6 +14,8 @@ export default async function Page({
   const { animeTitle, title, mirrors, control, episodes } = await page.getEpisodePage(
     episode_id
   );
+
+  console.log(mirrors);
 
   return (
     <main className="px-4">

@@ -1,5 +1,5 @@
-import AnimeRepo from "@/samehadaku/anime/repo";
-import AnimePage from "@/samehadaku/anime/page";
+import AnimeRepo from "@/otakudesu/anime/repo";
+import AnimePage from "@/otakudesu/anime/page";
 import Image from "next/image";
 import Link from "next/link";
 
