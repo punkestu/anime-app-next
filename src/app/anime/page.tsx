@@ -1,5 +1,5 @@
-import Repo from "@/samehadaku/list/repo";
-import Page from "@/samehadaku/list/page";
+import Repo from "@/otakudesu/list/repo";
+import Page from "@/otakudesu/list/page";
 import AnimeCard from "@/components/AnimeCard";
 import SearchBar from "@/components/SearchBar";
 import Link from "next/link";

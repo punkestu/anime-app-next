@@ -9,7 +9,7 @@ export default class Repo implements AnimeRepo {
     const $ = cheerio.load(html);
     const anime: Anime = {
       title: $("[property='og:title']").attr("content") || "",
-      description: "-",
+      description: $(".sinopc p").map((_, el) => $(el).text()).get().join(" "),
       image: $(".fotoanime > img").attr("src") || "",
       genre: $("a[rel=tag]")
         .map(

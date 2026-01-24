@@ -5,11 +5,12 @@ interface MirrorData {
   id: number;
   i: number;
   q: string;
-};
+}
 
 export default class Repo implements EpisodeRepo {
   private prefixEpisode = process.env.SAMEHADAKU_WEB + "/";
   private prefixAnime = process.env.SAMEHADAKU_WEB + "/anime/";
+  private banlistMirrors = ["vidhide", "filedon"];
 
   getAnimeTitle(html: string): string {
     const $ = cheerio.load(html);
@@ -26,13 +27,21 @@ export default class Repo implements EpisodeRepo {
     const mirrors: Mirror[] = $(".mirrorstream > ul > li > a")
       .map((_, el) => {
         const resolution = $(el).parent().parent().attr("class") || "";
-        const title = $(el).text() + (resolution ? ` (${resolution})` : "");
+        const title = $(el).text();
+        if (this.banlistMirrors.includes(title.toLowerCase().trim())) {
+          return null;
+        }
         const datacontent = $(el).attr("data-content") || "";
         const data: MirrorData = JSON.parse(atob(datacontent));
 
-        return { title, post: data.id, nume: data.i, type: data.q };
+        return {
+          title: title + ' ' + resolution,
+          post: data.id,
+          nume: data.i,
+          type: data.q,
+        };
       })
-      .get();
+      .get().filter((mirror): mirror is Mirror => mirror !== null);
     return mirrors;
   }
 
